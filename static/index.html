@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Wilden - Detect Wildlife Anomaly</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Quicksand:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn"
+        data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand p-0">
+            <img class="img-fluid me-3" src="img/icon/icon-10.png" alt="Icon">
+            <h1 class="m-0 text-primary">Wilden</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
+            <div class="navbar-nav ms-auto">
+                <a href="/index" class="nav-item nav-link active">Home</a>
+                <a href="" class="nav-item nav-link">About</a>
+                <a href="" class="nav-item nav-link">Project</a>
+                <a href="" class="nav-item nav-link">Services</a>
+                <a href="" class="nav-item nav-link">Contact</a>
+            </div>
+            <a href="" class="btn btn-primary">Donate</a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-dark p-0 mb-5">
+        <div class="row g-0 flex-column-reverse flex-lg-row">
+            <div class="col-lg-6 p-0 wow fadeIn" data-wow-delay="0.1s">
+                <div class="header-bg h-100 d-flex flex-column justify-content-center p-5">
+                    <h1 class="display-4 text-light mb-5">Non-Invasive Wildlife Monitoring and Anomaly Detection</h1>
+                    <div class="d-flex align-items-center pt-4 animated slideInDown">
+                        <a href="" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5">Read More</a>
+                        <button type="button" class="btn-play" data-bs-toggle="modal"
+                            data-src="https://www.youtube.com/embed/eCq4rvy4lKg" data-bs-target="#videoModal">
+                            <span></span>
+                        </button>
+                        <h6 class="text-white m-0 ms-4 d-none d-sm-block">Watch Video</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                <div class="owl-carousel header-carousel">
+                    <div class="owl-carousel-item">
+                        <img class="img-fluid" src="img/carousel-1.jpg" alt="">
+                    </div>
+                    <div class="owl-carousel-item">
+                        <img class="img-fluid" src="img/carousel-2.jpg" alt="">
+                    </div>
+                    <div class="owl-carousel-item">
+                        <img class="img-fluid" src="img/carousel-3.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- Video Modal Start -->
+    <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- 16:9 aspect ratio -->
+                    <div class="ratio ratio-16x9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen
+                            allowscriptaccess="always" allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Video Modal End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p><span class="text-primary me-2">#</span>Our Mission</p>
+                    <h1 class="display-5 mb-4">Why monitoring<span class="text-primary"> wildlife?</span></h1>
+                    <p class="mb-4">Wildlife monitoring also allows calibrating and better understanding the
+                        relationship between population abundance and damages (overabundance), so as detecting early
+                        possible threats to biodiversity, agriculture, animal health, and human well-being.</p>
+                    <h5 class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Biodiversity Conservation</h5>
+                    <h5 class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Identification of Threats</h5>
+                    <h5 class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Data-Driven Decision-Making
+                    </h5>
+                    <h5 class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Early Warning for Conservation
+                    </h5>
+                    <h5 class="mb-3"><i class="far fa-check-circle text-primary me-3"></i>Protection of Endangered
+                        Species</h5>
+                    <a class="btn btn-primary py-3 px-5 mt-3" href="">Read More</a>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="img-border">
+                        <img class="img-fluid" src="img/about.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Facts Start -->
+    <div class="container-xxl bg-primary facts my-5 py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
+                    <i class="fa fa-paw fa-3x text-primary mb-3"></i>
+                    <h1 class="text-white mb-2" data-toggle="counter-up">42,100</h1>
+                    <p class="text-white mb-0">Endangered Species</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
+                    <i class="fa fa-users fa-3x text-primary mb-3"></i>
+                    <h1 class="text-white mb-2" data-toggle="counter-up">1,549</h1>
+                    <p class="text-white mb-0">Poachers Arrested</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
+                    <i class="fa fa-dollar-sign fa-3x text-primary mb-3"></i>
+                    <h1 class="text-white mb-2" data-toggle="counter-up">23,000,000,000</h1>
+                    <p class="text-white mb-0">Dollar Illegal Trade/year</p>
+                </div>
+                <div class="col-md-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
+                    <i class="fa fa-shield-alt fa-3x text-primary mb-3"></i>
+                    <h1 class="text-white mb-2" data-toggle="counter-up">3,000</h1>
+                    <p class="text-white mb-0">Save WildLife Species</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
+
+
+    <!-- Project Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="container my-4 d-flex flex-column mb-3">
+                    <h1 class="display-5 mb-4"><span class="text-primary">Wildlife </span>Anomaly Detection Using
+                        YOLO</h1>
+                        <form class="d-flex flex-column my-3" id="upload-form" action="/upload/" method="post"
+                        enctype="multipart/form-data">
+                        <span class="my-3" style="display: flex;justify-content: space-between;">
+                        <h6 for="inputGroupFile02 my-1"># Upload Video (only mp4)</h6>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" name="getAlert">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Alert & Notification</label>
+                        </div></span>
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" id="inputGroupFile02" name="video" required>
+                        </div>
+                        <select class="form-select mb-4" aria-label="Default select example" name="selected_class" required>
+                            <option selected>Select the Video shot type</option>
+                            <option value="Daylight">Day-light</option>
+                            <option value="Thermal">Thermal-Imaging</option>
+                        </select>
+                        <input class="btn btn-primary align-self-center" type="submit" value="Upload">
+                    </form>
+                    <div class="my-5 d-flex flex-column align-items-center">
+                        <div class="lds-dual-ring" id="loader"></div>
+                        <p id="load-text">Detetcing Anomalies...</p>
+                    </div>
+                </div>
+                <div id="result-window">
+                    <div class="col-lg-6" style="width: 100%;">
+                        <div
+                            class="bg-primary h-100 d-flex align-items-center py-4 px-4 px-sm-5 justify-content-around">
+                                <h3 class="display-5 text-white mb-0">Visualization of Predicted Result</h3>
+                        </div>
+                    </div>
+                    <div class="container-fluid my-3">
+                        <div class="row d-flex justify-content-around">
+                            <div class="col-lg-6 give_width">
+                                <video id="uploaded-video" style="width: 100%;" controls type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="col-lg-6 give_width">
+                                <video id="inference-video" style="width: 100%;" controls type="video/webm" crossorigin="anonymous">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid my-3">
+                        <div class="d-flex justify-content-around">
+                            <div class="give_width">
+                                <center><h5 class="display-6 mt-4">Reference <span class="text-primary">Map</span></h3></center>
+                                <div id="map"></div>
+                                <input type="range" class="form-range" id="frame-slider" min="0" max="100" step="1" value="0" style="width: 46.875vw;">
+                                <label for="customRange1" class="form-label">Slide to See Other Frames</label>
+                            </div>
+                            <div class="result_table ms-1">
+                                <center><h5 class="display-6 mt-4">Result <span class="text-primary">Table</span></h3></center>
+                                <table class="table" id="detections-table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Index</th>
+                                        <th scope="col">Frame No.</th>
+                                        <th scope="col">Detected Object</th>
+                                        <th scope="col" style="width: 110px;">Confidence</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody class="overflow-y" style="max-height: 350px;"></tbody>
+                                  </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row gy-5 gx-4">
+                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <img class="img-fluid mb-3" src="img\icon\cctv.png" alt="Icon">
+                    <h5 class="mb-3">Stealth Surveillance</h5>
+                    <span>Efficient monitoring system that operates covertly to safeguard wildlife habitats.</span>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <img class="img-fluid mb-3" src="img\icon\shield.png" alt="Icon">
+                    <h5 class="mb-3">Firefighter AI</h5>
+                    <span>Cutting-edge technology that detects and responds to wildfires in real-time, minimizing environmental damage.</span>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <img class="img-fluid mb-3" src="img\icon\poaching.png" alt="Icon">
+                    <h5 class="mb-3">Poacher Buster</h5>
+                    <span>Dedicated AI solution designed to capture illegal poaching activities and protect endangered species</span>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <img class="img-fluid mb-3" src="img\icon\portrait-night.png" alt="Icon">
+                    <h5 class="mb-3">Night Guardian</h5>
+                    <span>Vigilant nighttime surveillance system using thermal imaging to safeguard wildlife during the dark hours.</span>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <img class="img-fluid mb-3" src="img\icon\safari.png" alt="Icon">
+                    <h5 class="mb-3">Wildlife Watcher</h5>
+                    <span>AI-powered observer that monitors and studies the behavior of diverse wildlife species.</span>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <img class="img-fluid mb-3" src="img\icon\watch.png" alt="Icon">
+                    <h5 class="mb-3">Smart Sentry</h5>
+                    <span>Intelligent sentinels that detect and report intrusions and threats to wildlife habitats.</span>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <img class="img-fluid mb-3" src="img\icon\detection.png" alt="Icon">
+                    <h5 class="mb-3">Anomaly Alert</h5>
+                    <span>Instant alerts for unusual and suspicious activities, enhancing wildlife conservation efforts.</span>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <img class="img-fluid mb-3" src="img\icon\alert.png" alt="Icon">
+                    <h5 class="mb-3">Vehicle Vigilant</h5>
+                    <span>Identifies and alerts authorities to unauthorized vehicles in protected areas, bolstering security.</span>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <img class="img-fluid mb-3" src="img\icon\temperature.png" alt="Icon">
+                    <h5 class="mb-3">Thermal Tracker</h5>
+                    <span> Utilizes thermal imaging to track movements and anomalies during low-light conditions.</span>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <img class="img-fluid mb-3" src="img\icon\wild-life.png" alt="Icon">
+                    <h5 class="mb-3">Conservation Sentinel</h5>
+                    <span>A sentinel system that guards the natural world, aiding in wildlife protection and habitat preservation.</span>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <img class="img-fluid mb-3" src="img\icon\remote-access.png" alt="Icon">
+                    <h5 class="mb-3">Remote Ranger</h5>
+                    <span>Empowers remote monitoring and control of wildlife reserves and protected zones.</span>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <img class="img-fluid mb-3" src="img\icon\conservation.png" alt="Icon">
+                    <h5 class="mb-3">Wildlife Wizard</h5>
+                    <span>A magical blend of technology and nature knowledge dedicated to wildlife preservation.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- Animal Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-6">
+                    <p><span class="text-primary me-2">#</span>Our Animals</p>
+                    <h1 class="display-5 mb-0">Let`s See Our <span class="text-primary">Zoofari</span> Awsome Animals
+                    </h1>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <a class="btn btn-primary py-3 px-5" href="">Explore More Animals</a>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <a class="animal-item" href="img/animal-md-1.jpg" data-lightbox="animal">
+                                <div class="position-relative">
+                                    <img class="img-fluid" src="img/animal-md-1.jpg" alt="">
+                                    <div class="animal-text p-4">
+                                        <p class="text-white small text-uppercase mb-0">Animal</p>
+                                        <h5 class="text-white mb-0">Elephant</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <a class="animal-item" href="img/animal-lg-1.jpg" data-lightbox="animal">
+                                <div class="position-relative">
+                                    <img class="img-fluid" src="img/animal-lg-1.jpg" alt="">
+                                    <div class="animal-text p-4">
+                                        <p class="text-white small text-uppercase mb-0">Animal</p>
+                                        <h5 class="text-white mb-0">Elephant</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <a class="animal-item" href="img/animal-lg-2.jpg" data-lightbox="animal">
+                                <div class="position-relative">
+                                    <img class="img-fluid" src="img/animal-lg-2.jpg" alt="">
+                                    <div class="animal-text p-4">
+                                        <p class="text-white small text-uppercase mb-0">Animal</p>
+                                        <h5 class="text-white mb-0">Elephant</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <a class="animal-item" href="img/animal-md-2.jpg" data-lightbox="animal">
+                                <div class="position-relative">
+                                    <img class="img-fluid" src="img/animal-md-2.jpg" alt="">
+                                    <div class="animal-text p-4">
+                                        <p class="text-white small text-uppercase mb-0">Animal</p>
+                                        <h5 class="text-white mb-0">Elephant</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <a class="animal-item" href="img/animal-md-3.jpg" data-lightbox="animal">
+                                <div class="position-relative">
+                                    <img class="img-fluid" src="img/animal-md-3.jpg" alt="">
+                                    <div class="animal-text p-4">
+                                        <p class="text-white small text-uppercase mb-0">Animal</p>
+                                        <h5 class="text-white mb-0">Elephant</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <a class="animal-item" href="img/animal-lg-3.jpg" data-lightbox="animal">
+                                <div class="position-relative">
+                                    <img class="img-fluid" src="img/animal-lg-3.jpg" alt="">
+                                    <div class="animal-text p-4">
+                                        <p class="text-white small text-uppercase mb-0">Animal</p>
+                                        <h5 class="text-white mb-0">Elephant</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Animal End -->
+ <!-- Testimonial Start -->
+ <div class="container-xxl py-5">
+    <div class="container">
+        <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Our Teams!</h1>
+        <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+            <div class="testimonial-item text-center">
+                <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="img\sudip.jpg" style="width: 100px; height: 100px;">
+                <div class="testimonial-text rounded text-center p-4">
+                    <h5 class="mb-1">Sudip Dhara</h5>
+                    <span class="fst-italic">ML Engineer</span>
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="img\anindya.jpg" style="width: 100px; height: 100px;">
+                <div class="testimonial-text rounded text-center p-4">
+                    <h5 class="mb-1">Anindya Mitra</h5>
+                    <span class="fst-italic">ML Engineer</span>
+                </div>
+            </div>
+            <div class="testimonial-item text-center">
+                <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="img\ripan.jpg" style="width: 100px; height: 100px;">
+                <div class="testimonial-text rounded text-center p-4">
+                    <h5 class="mb-1">Ripan Purkait</h5>
+                    <span class="fst-italic">ML Engineer</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Address</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Popular Links</h5>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Newsletter</h5>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button"
+                            class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script type="text/javaScript" src="js\script.js"></script>
+</body>
+
+</html>
