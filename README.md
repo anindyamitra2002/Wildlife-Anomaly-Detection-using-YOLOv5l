@@ -88,12 +88,16 @@ Our dataset is carefully constructed to ensure diversity and robustness across m
 ---
 
 ## Usage
+It is recommended to a new environment for this project.
 
-*This section will be filled in manually. Provide details about setting up the environment, dependencies, and running the model.*
-
+### Install Prerequisites
 ```bash
-# Example command to run the system
-python run_detection.py --config config.yaml
+pip install -r requirements.txt
+```
+
+### Run Server
+```bash
+fastapi dev main.py
 ```
 
 ---
