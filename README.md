@@ -29,13 +29,6 @@ Wildlife poaching, habitat destruction, and unauthorized human activities in pro
 
 Our system processes input frames from live video feeds, using drones, UAVs, or surveillance cameras. It utilizes YOLOv5 for anomaly detection and generates emergency alerts. Below are our architecture and workflow diagrams:
 
-### Architecture Overview
-![Architecture Diagram](./assets/YOLOV5l%20Architecture.png)  
-
-- **Backbone**: CSP-Darknet53, optimized for efficient feature extraction.
-- **Neck**: Uses advanced blocks and SPPF for feature pyramid representation.
-- **Head**: Responsible for final object detection outputs.
-
 ### Workflow Diagram
 ![Workflow Diagram](./assets/Workflow-yolov5l.png)  
 
@@ -44,6 +37,13 @@ Our system processes input frames from live video feeds, using drones, UAVs, or 
 3. **Detection**: YOLOv5 identifies anomalies.
 4. **Alert System**: Notifies relevant authorities via API.
 5. **Visualization**: Displays detected events on an interactive map.
+
+### Architecture Overview
+![Architecture Diagram](./assets/YOLOV5l%20Architecture.png)  
+
+- **Backbone**: CSP-Darknet53, optimized for efficient feature extraction.
+- **Neck**: Uses advanced blocks and SPPF for feature pyramid representation.
+- **Head**: Responsible for final object detection outputs.
 
 ---
 

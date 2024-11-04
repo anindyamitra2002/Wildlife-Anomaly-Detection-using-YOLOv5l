@@ -1,10 +1,11 @@
 import torch
 import cv2
-
+import pathlib
+temp = pathlib.PosixPath
+pathlib.PosixPath = pathlib.WindowsPath
 # Load the YOLOv8 model
-day_model = torch.hub.load('yolov5', 'custom',r'weights/day-final.pt',source='local', force_reload=True,
-trust_repo=True)
-thermal_model = torch.hub.load('yolov5',"custom", path=r'weights/night-final-aug.pt', source='local',force_reload=True,)
+day_model = torch.hub.load('yolov5', 'custom', r'weights/day-final.pt', source='local', force_reload=True, trust_repo=True,device="cpu")
+thermal_model = torch.hub.load('yolov5',"custom", path=r'weights/night-final-aug.pt', source='local', force_reload=True,device='cpu')
 
 day_class_to_animal = {
     0: 'Person',
