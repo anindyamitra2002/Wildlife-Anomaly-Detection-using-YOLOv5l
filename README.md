@@ -88,7 +88,7 @@ Our dataset is carefully constructed to ensure diversity and robustness across m
 ---
 
 ## Usage
-It is recommended to a new environment for this project.
+It is recommended to create a new environment for this project.
 
 ### Install Prerequisites
 ```bash
