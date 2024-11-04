@@ -18,9 +18,7 @@ Welcome to our Wildlife Monitoring and Anomaly Detection System! This project le
 Wildlife poaching, habitat destruction, and unauthorized human activities in protected areas are escalating threats to biodiversity. Our system offers a cost-effective, real-time solution using YOLOv5 to detect various anomalies, including poaching, unauthorized vehicles, wild animals, and forest fires. By addressing these issues with high precision and recall, our project plays a critical role in conservation efforts.
 
 ### Sample Video
-<video src="./assets/poacher.mp4" controls autoplay width="600">
-  Your browser does not support the video tag.
-</video>
+[Download the video](./assets/poacher.mkv)
 
 ---
 
@@ -30,7 +28,6 @@ Our system processes input frames from live video feeds, using drones, UAVs, or 
 
 ### Architecture Overview
 ![Architecture Diagram](./assets/YOLOV5l%20Architecture.png)  
-*Note: Replace the placeholder above with an actual architecture diagram.*
 
 - **Backbone**: CSP-Darknet53, optimized for efficient feature extraction.
 - **Neck**: Uses advanced blocks and SPPF for feature pyramid representation.
@@ -38,7 +35,6 @@ Our system processes input frames from live video feeds, using drones, UAVs, or 
 
 ### Workflow Diagram
 ![Workflow Diagram](./assets/Workflow-yolov5l.png)  
-*Note: Replace the placeholder above with a workflow diagram.*
 
 1. **Input**: Captured by UAVs or stationary cameras.
 2. **Frame Extraction**: The video is broken into frames.
@@ -67,7 +63,6 @@ Our model was trained and evaluated under different lighting conditions (day and
 | ![Loss Curve (Night)](./assets/night-val-boxloss.png) | ![Precision Curve (Night)](./assets/metrics_precision.png) | ![Recall Curve (Night)](./assets/metrics_recall.png) | ![mAP Curve (Night)](./assets/metrics_mAP_0.5.png) |
 
 
-
 ### Task-Specific Performance
 | Task                     | Class         | Precision | Recall | mAP@0.5 | mAP@0.5:0.9 |
 |-------------------------- |-------------- |-----------|--------|---------|-------------|
@@ -76,21 +71,16 @@ Our model was trained and evaluated under different lighting conditions (day and
 | Vehicle Detection         | Vehicle       | 0.996     | 0.885  | 0.940   | 0.858       |
 | Poacher Detection         | Human/Poacher | 1.000     | 0.987  | 0.993   | 0.965       |
 
-*Visual examples, confusion matrix, and precision-recall trade-off curves will be added here.*
-
 ---
 
 ## Dataset
 
-Our dataset is carefully constructed to ensure diversity and robustness across multiple classes. 
+Our dataset is carefully constructed to ensure diversity and robustness across multiple classes.
 
 - **Training Data**: Collected from publicly available sources such as Roboflow and Kaggle, along with frames extracted from various wildlife surveillance videos. We annotated 3,193 images for training.
 - **Validation and Testing**: Contains 684 and 685 images, respectively, sourced similarly to maintain consistency and diversity.
 - **Classes**: Includes categories like person, elephant, zebra, giraffe, deer, bison, rhino, boar, leopard, vehicle, and fire.
 - **Annotation Tools**: Labelimg, CVAT, and Make-Sense were used for manual annotation. The annotations were converted to YOLOv5 format, and cross-verification was done to ensure accuracy.
-
-### Data Visualization
-A distribution graph of our dataset classes will be uploaded to provide insights into class frequencies and dataset balance.
 
 ---
 
