@@ -1,0 +1,4 @@
+torch
+fastapi[standard]
+twilio
+opencv-python

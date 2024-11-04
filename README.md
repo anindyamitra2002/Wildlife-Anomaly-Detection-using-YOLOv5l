@@ -18,7 +18,10 @@ Welcome to our Wildlife Monitoring and Anomaly Detection System! This project le
 Wildlife poaching, habitat destruction, and unauthorized human activities in protected areas are escalating threats to biodiversity. Our system offers a cost-effective, real-time solution using YOLOv5 to detect various anomalies, including poaching, unauthorized vehicles, wild animals, and forest fires. By addressing these issues with high precision and recall, our project plays a critical role in conservation efforts.
 
 ### Sample Video
-[Download the video](./assets/poacher.mkv)
+<video width="640" height="360" controls>
+  <source src="./assets/sample.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
