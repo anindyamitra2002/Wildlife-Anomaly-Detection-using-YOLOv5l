@@ -77,19 +77,19 @@ Our model was trained and evaluated under different lighting conditions (day and
 #### Night Training Curves
 <div style="display: flex; justify-content: space-around; margin-top: 20px;">
   <div>
-    <img src="./assets/night-val-boxloss.png" alt="Loss Curve (Night)" width="200">
+    <img src="./assets/night-val-boxloss.png" alt="Loss Curve (Night)" width="180">
     <p align="center"><em>Loss Curve (Night)</em></p>
   </div>
   <div>
-    <img src="./assets/metrics_precision.png" alt="P Curve (Night)" width="200">
+    <img src="./assets/metrics_precision.png" alt="P Curve (Night)" width="180">
     <p align="center"><em>Precision Curve (Night)</em></p>
   </div>
   <div>
-    <img src="./assets/metrics_recall.png" alt="R Curve (Night)" width="200">
+    <img src="./assets/metrics_recall.png" alt="R Curve (Night)" width="180">
     <p align="center"><em>Recall Curve (Night)</em></p>
   </div>
   <div>
-    <img src="./assets/metrics_mAP_0.5.png" alt="mAP Curve (Night)" width="200">
+    <img src="./assets/metrics_mAP_0.5.png" alt="mAP Curve (Night)" width="180">
     <p align="center"><em>mAP Curve (Night)</em></p>
   </div>
 </div>
