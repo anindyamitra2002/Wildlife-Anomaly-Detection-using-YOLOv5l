@@ -54,45 +54,16 @@ Our experiments yielded outstanding results, demonstrating high precision and re
 
 Our model was trained and evaluated under different lighting conditions (day and night), with the following performance curves:
 
-#### Day Training Curves
-<div style="display: flex; justify-content: space-around;">
-  <div>
-    <img src="./assets/day-valbox.png" alt="Loss Curve (Day)" width="200">
-    <p align="center"><em>Loss Curve (Day)</em></p>
-  </div>
-  <div>
-    <img src="./assets/day-pr.png" alt="P Curve (Day)" width="200">
-    <p align="center"><em>Precision Curve (Day)</em></p>
-  </div>
-  <div>
-    <img src="./assets/day-recall.png" alt="R Curve (Day)" width="200">
-    <p align="center"><em>Recall Curve (Day)</em></p>
-  </div>
-  <div>
-    <img src="./assets/day-map05.png" alt="mAP Curve (Day)" width="200">
-    <p align="center"><em>mAP Curve (Day)</em></p>
-  </div>
-</div>
+### Day Training Curves
+| Loss Curve (Day) | Precision Curve (Day) | Recall Curve (Day) | mAP Curve (Day) |
+|:----------------:|:---------------------:|:------------------:|:---------------:|
+| ![Loss Curve (Day)](./assets/day-valbox.png) | ![Precision Curve (Day)](./assets/day-pr.png) | ![Recall Curve (Day)](./assets/day-recall.png) | ![mAP Curve (Day)](./assets/day-map05.png) |
 
-#### Night Training Curves
-<div style="display: flex; justify-content: space-around; margin-top: 20px;">
-  <div>
-    <img src="./assets/night-val-boxloss.png" alt="Loss Curve (Night)" width="200">
-    <p align="center"><em>Loss Curve (Night)</em></p>
-  </div>
-  <div>
-    <img src="./assets/metrics_precision.png" alt="P Curve (Night)" width="200">
-    <p align="center"><em>Precision Curve (Night)</em></p>
-  </div>
-  <div>
-    <img src="./assets/metrics_recall.png" alt="R Curve (Night)" width="200">
-    <p align="center"><em>Recall Curve (Night)</em></p>
-  </div>
-  <div>
-    <img src="./assets/metrics_mAP_0.5.png" alt="mAP Curve (Night)" width="200">
-    <p align="center"><em>mAP Curve (Night)</em></p>
-  </div>
-</div>
+### Night Training Curves
+| Loss Curve (Night) | Precision Curve (Night) | Recall Curve (Night) | mAP Curve (Night) |
+|:------------------:|:-----------------------:|:--------------------:|:-----------------:|
+| ![Loss Curve (Night)](./assets/night-val-boxloss.png) | ![Precision Curve (Night)](./assets/metrics_precision.png) | ![Recall Curve (Night)](./assets/metrics_recall.png) | ![mAP Curve (Night)](./assets/metrics_mAP_0.5.png) |
+
 
 
 ### Task-Specific Performance
@@ -132,17 +103,6 @@ python run_detection.py --config config.yaml
 
 ---
 
-## Model Links
-
-You can download the pre-trained models and weights from the following links:
-
-- **YOLOv5 Weights**: [Download Here](#)  
-*Note: Replace the link with the actual download link for the model.*
-
-- **Trained Model Checkpoints**: [Download Here](#)  
-*Note: Replace the link with the actual download link for checkpoints.*
-
----
 
 ## Conclusion
 
